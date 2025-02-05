@@ -1,9 +1,13 @@
-use std::io::*;
+mod utils;
+
+use std::io::Result;
+
+use utils::readln;
 
 #[tokio::main]
 async fn main() -> Result<()> {
     println!("Enter 's' to start as server or 'c' to connect as client:");
-    let role = read();
+    let role = readln();
 
     match role.as_str() {
         "s" => {
@@ -12,7 +16,7 @@ async fn main() -> Result<()> {
         }
         "c" => {
             println!("Enter server address (e.g., 127.0.0.1:8080):");
-            let _addr = read();
+            let _addr = readln();
             //start_client(addr).await?;
         }
         _ => {
@@ -20,10 +24,4 @@ async fn main() -> Result<()> {
         }
     }
     Ok(())
-}
-
-fn read() -> String {
-    let mut input = String::new();
-    stdin().read_line(&mut input);
-    String::from(input.trim())
 }
