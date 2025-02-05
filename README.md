@@ -3,7 +3,7 @@
 
 ## Overview
 
-Tis P2P Chat Application is an attempt at a decentralized messaging platform that enables users to communicate directly with one another without the need for a central server. It leverages Rust's powerful networking capabilities and asynchronous programming to facilitate secure and real-time peer-to-peer communication. 
+This P2P Chat Application is an attempt at a decentralized messaging platform that enables users to communicate directly with one another without the need for a central server. It leverages Rust's powerful networking capabilities and asynchronous programming to facilitate secure and real-time peer-to-peer communication. 
 
 ## Features
 
