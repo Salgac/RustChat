@@ -1,6 +1,12 @@
+mod client;
+mod server;
+mod connection;
 mod utils;
 
 use std::io::Result;
+
+use client::start_client;
+use server::start_server;
 
 use utils::readln;
 
@@ -12,12 +18,12 @@ async fn main() -> Result<()> {
     match role.as_str() {
         "s" => {
             println!("Starting server!");
-            //start_server().await?;
+            start_server().await?;
         }
         "c" => {
             println!("Enter server address (e.g., 127.0.0.1:8080):");
-            let _addr = readln();
-            //start_client(addr).await?;
+            let addr = readln();
+            start_client(addr.as_str()).await?;
         }
         _ => {
             println!("Invalid input. Exiting.");
